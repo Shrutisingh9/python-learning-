@@ -22,39 +22,27 @@ print(numbers)  # Output: [1, 20, 3, 4]
 
 # practive questions
 # Create list of 5 numbers
-list= [1, 2, 3, 4, 5]
+list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print(list)
 
 # Find sum of elements
-elements= int(input("enter number of elements in list: "))
-total =0
-for i in range (elements):
-    num = int(input("ener element: "))
-    total +=num
+total = 0
+for num in list:
+    total += num
 print("sum of elements: ", total)
 
 # Find maximum element
-max = int(input("enter number of elements in list to find maximum: "))
-max = float('-inf')
-for i in range (elements):
-    num = int(input("enter elements: "))
-    if num > max:
-        max = num
-print("maximum element: ", max)
-# Reverse a list
-list = int(input("enter number of element on the list to reverse: "))
-reversed_list = []
-for i in range (list):
-    num = int(input("enter elements: "))
-    reversed_list.insert(0, num)
-    continue
-print("reversed list is: ", reversed_list)
-    
-# Count even numbers
-list = int(input("enter number of elements in list to count even numbers: "))
-count = 0
-for i in range (list):  
-    num = int(input("enter elements: "))
+max_num = max(list)
+print("maximum element is: ", max_num)
+        
+# reverse a list
+list.reverse()
+print("reversed list: ", list)
+
+# count even numbers
+even_count = 0
+for num in list:
     if num % 2 == 0:
-        count += 1
-print("count of even numbers: ", count)
+        even_count += 1
+print("count of even numbers: ", even_count)
+    
