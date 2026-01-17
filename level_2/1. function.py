@@ -136,7 +136,7 @@ print(square(7))
 def prime(n):
     if n <=1:
         return "not prime"
-    for i in range(2, int(n**0,5)+1):
+    for i in range(2, int(n**0.5)+1):
         if n % i ==0:
             return "not prime"
     return "prime"
@@ -144,3 +144,109 @@ def prime(n):
 print(prime(11))
 
 # write a function to reverse a number
+def reverse(n):
+    rev =0
+    while n>0:
+        digit = n %10
+        rev = rev * 10 + digit
+        n = n //10
+    return rev
+print(reverse(1234))
+
+# Write a function to find maximum of 3 numbers.
+def maximum (a, b, c):
+    return max(a, b , c)
+
+print(maximum(10, 234, 56))
+
+# Write a function to count vowels in a string.
+def vowel(s):
+    count=0
+    for char in s.lower():
+        if char in 'aeiou':
+            count += 1
+    return count
+print(vowel("Hello World!"))
+
+# Write a function to check palindrome number.
+def palindrome(n):
+    temp = n 
+    rev = 0
+    
+    while n > 0:
+        digit = n % 10
+        rev = rev *10 + digit
+        n = n //10
+        
+    if temp == rev:
+        return "palindrome"
+    else:
+        return "not palindrome"
+
+print(palindrome(1232))
+        
+# Write a function to calculate LCM of two numbers.
+def LCM(a, b):
+    x, y = a, b
+    
+    while y != 0:
+        x, y = y , x%y
+    gcd = x
+    lcm = (a*b)//gcd
+    return lcm
+
+a = int(input("enter first number to calculate LCM: "))
+b = int(input("enter second number to calculate LCM: "))
+print(LCM(a, b))
+
+# Write a function to return list of even numbers from given list.
+def even (lst):
+    even_num = []
+    for num in lst:
+        if num % 2 == 0:
+            even_num.append(num)
+    return even_num
+lst = int(input("enter number of elements in list: "))
+numbers=[]
+for i in range(lst):
+    n = int(input("enter elements:"))
+    numbers.append(n)
+print(even(numbers))
+
+# Write a function to generate Fibonacci series.
+def fibonacci(n):
+    a, b = 0, 1
+    count = 0
+    
+    while count< n :
+        print(a, end=" ")
+        a, b = b, a+b
+        count +=1
+    return fibonacci
+
+n = int(input("enter numbers of terms in fibonacci series: "))
+print(fibonacci(n))
+
+# Write a function that takes a list and returns:
+def list(numbers):
+# sum
+    total = sum (numbers )
+# average
+    avg = sum (numbers)/ len(numbers)
+# maximum
+    maximum = max(numbers)
+# minimum
+    minimum = min(numbers)
+
+    return total , avg, maximum, minimum
+n = int(input("enter number of elements in list: "))
+numbers=[]
+for i in range(n    ):
+    num = int(input("enter elements:"))
+    numbers.append(num)       
+total, avg, maximum, minimum = list(numbers)
+print("sum : ", total)
+print("average : ", avg)
+print("maximum : ", maximum)
+print("minimum : ", minimum)    
+
